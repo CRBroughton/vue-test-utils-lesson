@@ -4,13 +4,14 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: "Greeting",
+  setup () {
+    const greeting = "Vue and TDD";
 
-  data() {
     return {
-      greeting: "Vue and TDD",
+      greeting,
     };
   },
 };
