@@ -3,7 +3,7 @@ import Greeting from '@/components/Greeting.vue'
 
 describe('Greeting.vue', () => {
   it('renders a greeting', () => {
-
+    expect(wrapper.text()).toMatch("Vue and TDD")
   })
 })
 
