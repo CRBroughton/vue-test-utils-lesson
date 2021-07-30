@@ -1,10 +1,11 @@
 import { mount } from '@vue/test-utils'
 import TodoApp from '@/components/TodoApp.vue';
 
-test('renders a todo', () => {
+test('creates a todo', async () => {
   const wrapper = mount(TodoApp)
 
-  const todo = wrapper.get('[data-test="todo"]')
+  await wrapper.get('[data-test="new-todo"]').setValue('New todo')
+  await wrapper.get('[data-test="form"]').trigger('submit')
 
-  expect(todo.text()).toBe('Learn Vue.js 3')
+  expect(wrapper.findAll('[data-test="todo"]')).toHaveLength(2)
 })
